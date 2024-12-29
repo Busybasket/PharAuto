@@ -16,18 +16,23 @@ namespace PharAuto
         public login()
         {
             InitializeComponent();
-            
+            if (this.IsInputKey(Keys.Enter))
+            {
+                button1_Click(this,EventArgs.Empty);
+            }
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = @"Provider=SQLOLEDB;Data Source=emin.italynorth.cloudapp.azure.com;Initial Catalog=LOCALDB;User ID=emin2;Password=emin;";
             OleDbConnection conn = new OleDbConnection(connectionString);
             Form1.ConnectDB(conn);
-            var pass = Form1.CheckCredentials(conn,usernameTextbox.Text,passwordTextbox.Text);
+            var pass = Form1.CheckCredentials((Form1)this.ParentForm, conn, usernameTextbox.Text, passwordTextbox.Text);
+            usernameTextbox.Text = "";
+            passwordTextbox.Text = "";
             Form1.DismountDB(conn);
             if (pass) { Form1.CloseUI(this.ParentForm, this); }
-
         }
 
 

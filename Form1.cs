@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -13,7 +14,7 @@ namespace PharAuto
         {
             
             InitializeComponent();
-
+           
         }
         static public void ConnectDB(OleDbConnection conn){
             
@@ -44,7 +45,7 @@ namespace PharAuto
                 
             }
         }
-        static public bool CheckCredentials(OleDbConnection conn, string username, string password)
+        static public bool CheckCredentials(Form1 form, OleDbConnection conn, string username, string password)
         {
             try
             {
@@ -57,6 +58,9 @@ namespace PharAuto
 
                 if (userCount > 0)
                 {
+                    form.referanslarToolStripMenuItem.Enabled = true;
+                    form.hastaKabulToolStripMenuItem.Enabled = true;
+                    form.raporlarToolStripMenuItem.Enabled = true;
                     return true;
                 }
                 else
@@ -76,15 +80,38 @@ namespace PharAuto
         {
             parentForm.Controls.Remove(ue);
         }
+        static public void OpenUI(Form parentForm, UserControl ue)
+        {
+            parentForm.Controls.Add(ue);
+        }
+
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-
+            referanslarToolStripMenuItem.Enabled = false;
+            hastaKabulToolStripMenuItem.Enabled = false;
+            raporlarToolStripMenuItem.Enabled = false;
         }
 
         private void login1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void kullanıcıTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var kullaniciTanimlamaInstance = new kullaniciTanimlama();
+            Controls.Add(kullaniciTanimlamaInstance);
+            kullaniciTanimlamaInstance.BringToFront();
+            kullaniciTanimlamaInstance.Location = new Point(this.Size.Width/4,this.Size.Height/4);
+        }
+
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            referanslarToolStripMenuItem.Enabled = false;
+            hastaKabulToolStripMenuItem.Enabled = false;
+            raporlarToolStripMenuItem.Enabled = false;
+            Controls.Add(login1);
         }
     }
 }
