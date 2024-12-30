@@ -40,7 +40,7 @@
             this.button1.Location = new System.Drawing.Point(89, 166);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 26);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -57,7 +57,7 @@
             this.passwordTextbox.Location = new System.Drawing.Point(73, 127);
             this.passwordTextbox.Name = "passwordTextbox";
             this.passwordTextbox.Size = new System.Drawing.Size(127, 22);
-            this.passwordTextbox.TabIndex = 1;
+            this.passwordTextbox.TabIndex = 2;
             // 
             // label1
             // 

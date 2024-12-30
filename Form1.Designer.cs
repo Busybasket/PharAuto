@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.referanslarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıTanımlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.poliklinikTanımlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,24 +35,11 @@
             this.hastaKabulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hastaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.login1 = new PharAuto.login();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.referanslarToolStripMenuItem,
-            this.hastaKabulToolStripMenuItem,
-            this.raporlarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // referanslarToolStripMenuItem
             // 
@@ -62,7 +48,7 @@
             this.poliklinikTanımlamaToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.referanslarToolStripMenuItem.Name = "referanslarToolStripMenuItem";
-            this.referanslarToolStripMenuItem.Size = new System.Drawing.Size(97, 26);
+            this.referanslarToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.referanslarToolStripMenuItem.Text = "Referanslar";
             // 
             // kullanıcıTanımlamaToolStripMenuItem
@@ -90,7 +76,7 @@
             this.hastaKabulToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hastaİşlemleriToolStripMenuItem});
             this.hastaKabulToolStripMenuItem.Name = "hastaKabulToolStripMenuItem";
-            this.hastaKabulToolStripMenuItem.Size = new System.Drawing.Size(103, 26);
+            this.hastaKabulToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.hastaKabulToolStripMenuItem.Text = "Hasta Kabul";
             // 
             // hastaİşlemleriToolStripMenuItem
@@ -102,24 +88,50 @@
             // raporlarToolStripMenuItem
             // 
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.referanslarToolStripMenuItem,
+            this.hastaKabulToolStripMenuItem,
+            this.raporlarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStrip1.Size = new System.Drawing.Size(982, 28);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // login1
             // 
             this.login1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.login1.Location = new System.Drawing.Point(261, 91);
+            this.login1.Location = new System.Drawing.Point(359, 191);
             this.login1.Name = "login1";
             this.login1.Size = new System.Drawing.Size(265, 237);
             this.login1.TabIndex = 0;
             this.login1.Load += new System.EventHandler(this.login1_Load);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 629);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(982, 24);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 653);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.login1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -136,14 +148,15 @@
         #endregion
 
         private login login1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem referanslarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hastaKabulToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kullanıcıTanımlamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem poliklinikTanımlamaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hastaKabulToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hastaİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 

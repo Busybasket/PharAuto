@@ -22,7 +22,7 @@ namespace PharAuto
             {
                 
                 conn.Open();
-                MessageBox.Show("Bağlantı başarılı!");
+                //MessageBox.Show("Bağlantı başarılı!");
                
             }
             catch (Exception hata)
@@ -36,7 +36,7 @@ namespace PharAuto
             try
             {
                 conn.Close();
-                MessageBox.Show("Bağlantı kapatıldı.");
+                //MessageBox.Show("Bağlantı kapatıldı.");
                 
             }
             catch (Exception hata)
@@ -102,8 +102,8 @@ namespace PharAuto
         {
             var kullaniciTanimlamaInstance = new kullaniciTanimlama();
             Controls.Add(kullaniciTanimlamaInstance);
-            kullaniciTanimlamaInstance.BringToFront();
-            kullaniciTanimlamaInstance.Location = new Point(this.Size.Width/4,this.Size.Height/4);
+            
+            
         }
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
