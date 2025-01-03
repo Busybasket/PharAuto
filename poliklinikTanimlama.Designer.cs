@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.buttonGuncelle = new System.Windows.Forms.Button();
             this.buttonCikis = new System.Windows.Forms.Button();
+            this.buttonGuncelle = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,52 +57,15 @@
             this.groupBox1.Text = "Poliklinik Tanımlama";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // buttonCikis
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(382, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Poliklinik Adı";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(386, 220);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 28);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboBox1_KeyDown);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(386, 286);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(236, 88);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 263);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Açıklama";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(541, 224);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 24);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Geçerlilik";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.buttonCikis.Location = new System.Drawing.Point(519, 423);
+            this.buttonCikis.Name = "buttonCikis";
+            this.buttonCikis.Size = new System.Drawing.Size(103, 49);
+            this.buttonCikis.TabIndex = 11;
+            this.buttonCikis.Text = "Çıkış";
+            this.buttonCikis.UseVisualStyleBackColor = true;
+            this.buttonCikis.Click += new System.EventHandler(this.buttonCikis_Click);
             // 
             // buttonGuncelle
             // 
@@ -114,14 +77,51 @@
             this.buttonGuncelle.UseVisualStyleBackColor = true;
             this.buttonGuncelle.Click += new System.EventHandler(this.buttonGuncelle_Click);
             // 
-            // buttonCikis
+            // checkBox1
             // 
-            this.buttonCikis.Location = new System.Drawing.Point(519, 423);
-            this.buttonCikis.Name = "buttonCikis";
-            this.buttonCikis.Size = new System.Drawing.Size(103, 49);
-            this.buttonCikis.TabIndex = 11;
-            this.buttonCikis.Text = "Çıkış";
-            this.buttonCikis.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(541, 224);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(94, 24);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Geçerlilik";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(386, 286);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(236, 88);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(386, 220);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(149, 28);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(382, 263);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Açıklama";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(382, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Poliklinik Adı";
             // 
             // poliklinikTanimlama
             // 

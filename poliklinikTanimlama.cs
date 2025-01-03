@@ -51,13 +51,8 @@ namespace PharAuto
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Handle the selected index change event if needed
-        }
-
-        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
+            
+            
                 string selectedPoliklinik = (string)comboBox1.SelectedItem;
 
                 string connectionString = @"Provider=SQLOLEDB;Data Source=emin.italynorth.cloudapp.azure.com;Initial Catalog=LOCALDB;User ID=emin2;Password=emin;";
@@ -78,7 +73,8 @@ namespace PharAuto
                     {
                         DataRow row = ds.Tables[0].Rows[0];
                         richTextBox1.Text = row["aciklama"].ToString(); // Replace "aciklama" with actual column name
-                    }
+                        checkBox1.Checked = row["durum"].ToString() == "1";
+                }
                 }
                 catch (Exception ex)
                 {
@@ -88,9 +84,11 @@ namespace PharAuto
                 {
                     Form1.DismountDB(conn);
                 }
+        }
 
-                e.Handled = true; // Mark the event as handled
-            }
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -117,9 +115,10 @@ namespace PharAuto
                     OleDbConnection conn = new OleDbConnection(connectionString);
                     Form1.ConnectDB(conn);
 
-                    string sqlIfadesi = "UPDATE dbo.poliklinik SET aciklama = ? WHERE poliklinikadi = ?";
+                    string sqlIfadesi = "UPDATE dbo.poliklinik SET aciklama = ?, durum = ? WHERE poliklinikadi = ?";
                     OleDbCommand cmd = new OleDbCommand(sqlIfadesi, conn);
                     cmd.Parameters.AddWithValue("?", richTextBox1.Text);
+                    cmd.Parameters.AddWithValue("?", checkBox1.Checked); 
                     cmd.Parameters.AddWithValue("?", comboBox1.SelectedItem.ToString());
 
                     cmd.ExecuteNonQuery();
@@ -137,6 +136,11 @@ namespace PharAuto
             {
                 MessageBox.Show("No data to update");
             }
+        }
+
+        private void buttonCikis_Click(object sender, EventArgs e)
+        {
+            Form1.CloseUI(this.ParentForm,this);
         }
     }
 }
