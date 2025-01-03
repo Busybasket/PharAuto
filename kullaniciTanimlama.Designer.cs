@@ -129,6 +129,7 @@
             this.buttonCikis.TabIndex = 9;
             this.buttonCikis.Text = "Çıkış";
             this.buttonCikis.UseVisualStyleBackColor = true;
+            this.buttonCikis.Click += new System.EventHandler(this.buttonCikis_Click);
             // 
             // buttonGuncelle
             // 
@@ -151,6 +152,15 @@
             // kanCombobox
             // 
             this.kanCombobox.FormattingEnabled = true;
+            this.kanCombobox.Items.AddRange(new object[] {
+            "0 Rh+",
+            "0 Rh-",
+            "A Rh+",
+            "A Rh-",
+            "B Rh+",
+            "B Rh-",
+            "AB Rh+",
+            "AB Rh-"});
             this.kanCombobox.Location = new System.Drawing.Point(572, 367);
             this.kanCombobox.Name = "kanCombobox";
             this.kanCombobox.Size = new System.Drawing.Size(121, 28);
@@ -169,6 +179,9 @@
             // medeniHalCombobox
             // 
             this.medeniHalCombobox.FormattingEnabled = true;
+            this.medeniHalCombobox.Items.AddRange(new object[] {
+            "Evli",
+            "Bekar"});
             this.medeniHalCombobox.Location = new System.Drawing.Point(572, 319);
             this.medeniHalCombobox.Name = "medeniHalCombobox";
             this.medeniHalCombobox.Size = new System.Drawing.Size(121, 28);
@@ -177,6 +190,11 @@
             // cinsiyetCombobox
             // 
             this.cinsiyetCombobox.FormattingEnabled = true;
+            this.cinsiyetCombobox.Items.AddRange(new object[] {
+            "Kadin",
+            "Erkek",
+            "Diger",
+            "Belirtmek Istemiyorum"});
             this.cinsiyetCombobox.Location = new System.Drawing.Point(572, 271);
             this.cinsiyetCombobox.Name = "cinsiyetCombobox";
             this.cinsiyetCombobox.Size = new System.Drawing.Size(121, 28);
@@ -185,6 +203,11 @@
             // unvanCombobox
             // 
             this.unvanCombobox.FormattingEnabled = true;
+            this.unvanCombobox.Items.AddRange(new object[] {
+            "CEO",
+            "CTO",
+            "Project Leader",
+            "HR Specialist"});
             this.unvanCombobox.Location = new System.Drawing.Point(572, 35);
             this.unvanCombobox.Name = "unvanCombobox";
             this.unvanCombobox.Size = new System.Drawing.Size(179, 28);

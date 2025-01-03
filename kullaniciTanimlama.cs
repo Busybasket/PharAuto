@@ -15,7 +15,7 @@ namespace PharAuto
     public partial class kullaniciTanimlama : UserControl
     {
         private DataSet ds;
-        private OleDbDataAdapter daFriends;
+        private OleDbDataAdapter dataAdapter;
 
         public kullaniciTanimlama()
         {
@@ -54,17 +54,17 @@ namespace PharAuto
             Form1.ConnectDB(conn);
 
             string sqlIfadesi = "Select * From dbo.kullanici Where kodu = ?";
-            daFriends = new OleDbDataAdapter(sqlIfadesi, conn);
+            dataAdapter = new OleDbDataAdapter(sqlIfadesi, conn);
             OleDbCommand command = new OleDbCommand(sqlIfadesi, conn);
             OleDbParameter parameter = new OleDbParameter("?", OleDbType.VarChar, 50); // Set the size to 50 or appropriate value
             parameter.Value = comboBox1.Text;
             command.Parameters.Add(parameter);
             command.Prepare();
 
-            daFriends.SelectCommand = command;
+            dataAdapter.SelectCommand = command;
 
             ds = new DataSet();
-            daFriends.Fill(ds);
+            dataAdapter.Fill(ds);
 
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
@@ -104,7 +104,7 @@ namespace PharAuto
 
         private void buttonGuncelle_Click(object sender, EventArgs e)
         {
-            if (ds != null && daFriends != null)
+            if (ds != null && dataAdapter != null)
             {
                 DataRow row = ds.Tables[0].Rows[0];
 
@@ -127,14 +127,19 @@ namespace PharAuto
                 row["sifre"] = sifreTextbox.Text;
                 row["yetki"] = yetkiRadiobutton.Checked ? "1" : "0";
 
-                OleDbCommandBuilder commandBuilder = new OleDbCommandBuilder(daFriends);
-                daFriends.Update(ds);
-                MessageBox.Show("Data updated successfully.", "Update Successful");
+                OleDbCommandBuilder commandBuilder = new OleDbCommandBuilder(dataAdapter);
+                dataAdapter.Update(ds);
+                MessageBox.Show("Veriler guncellendi.", "Guncelleme Basarili");
             }
             else
             {
-                MessageBox.Show("No data to update.", "Update Failed");
+                MessageBox.Show("Veri bulunamadi.", "Guncelleme Basarisiz");
             }
+        }
+
+        private void buttonCikis_Click(object sender, EventArgs e)
+        {
+            Form1.CloseUI(ParentForm, this);
         }
     }
 }

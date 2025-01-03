@@ -54,20 +54,21 @@
             // kullanıcıTanımlamaToolStripMenuItem
             // 
             this.kullanıcıTanımlamaToolStripMenuItem.Name = "kullanıcıTanımlamaToolStripMenuItem";
-            this.kullanıcıTanımlamaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.kullanıcıTanımlamaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kullanıcıTanımlamaToolStripMenuItem.Text = "Kullanıcı Tanıtma";
             this.kullanıcıTanımlamaToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıTanımlamaToolStripMenuItem_Click);
             // 
             // poliklinikTanımlamaToolStripMenuItem
             // 
             this.poliklinikTanımlamaToolStripMenuItem.Name = "poliklinikTanımlamaToolStripMenuItem";
-            this.poliklinikTanımlamaToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.poliklinikTanımlamaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.poliklinikTanımlamaToolStripMenuItem.Text = "Poliklinik Tanıtma";
+            this.poliklinikTanımlamaToolStripMenuItem.Click += new System.EventHandler(this.poliklinikTanımlamaToolStripMenuItem_Click);
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
             this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click);
             // 
@@ -119,9 +120,9 @@
             // 
             this.statusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 629);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 631);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(982, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(982, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 

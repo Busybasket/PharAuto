@@ -9,6 +9,7 @@ namespace PharAuto
 {
     public partial class Form1 : Form
     {
+        
 
         public Form1()
         {
@@ -65,13 +66,13 @@ namespace PharAuto
                 }
                 else
                 {
-                    MessageBox.Show("Username or Password is wrong");
+                    MessageBox.Show("Kullanici adi veya sifre yanlis");
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while checking credentials: " + ex.Message);
+                MessageBox.Show("Bilgileri konrol ederken hata olustu: " + ex.Message);
                 return false;
             }
         }
@@ -102,8 +103,7 @@ namespace PharAuto
         {
             var kullaniciTanimlamaInstance = new kullaniciTanimlama();
             Controls.Add(kullaniciTanimlamaInstance);
-            
-            
+            kullaniciTanimlamaInstance.BringToFront();
         }
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +112,13 @@ namespace PharAuto
             hastaKabulToolStripMenuItem.Enabled = false;
             raporlarToolStripMenuItem.Enabled = false;
             Controls.Add(login1);
+        }
+
+        private void poliklinikTanımlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var poliklinikTanımlamaInstance = new poliklinikTanimlama();
+            Controls.Add(poliklinikTanımlamaInstance);
+            poliklinikTanımlamaInstance.BringToFront();
         }
     }
 }

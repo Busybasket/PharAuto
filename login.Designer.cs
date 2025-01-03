@@ -54,8 +54,10 @@
             // 
             // passwordTextbox
             // 
+            this.passwordTextbox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.passwordTextbox.Location = new System.Drawing.Point(73, 127);
             this.passwordTextbox.Name = "passwordTextbox";
+            this.passwordTextbox.PasswordChar = '*';
             this.passwordTextbox.Size = new System.Drawing.Size(127, 22);
             this.passwordTextbox.TabIndex = 2;
             // 
